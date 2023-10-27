@@ -1,7 +1,7 @@
 pipeline {
   agent {
-     label 'ansible'
- }
+       label 'ansible'
+   }
 
  stages {
    stage('Hello'){
@@ -11,4 +11,12 @@ pipeline {
 
    }
  }
+ post{
+   always {
+     echo "send an alert mail"
+   }
+
+ }
+
 }
+
